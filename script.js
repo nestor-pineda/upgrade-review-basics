@@ -39,6 +39,65 @@ console.log(uniqueChars);
 
 // Devuelve ['comedia', 'aventura', 'acción', 'thriller', 'animación']
 
+
+
+// #2: Mix Fors
+// Dado el siguiente javascript usa for of y for in para hacer la media del volumen de todos los sonidos favoritos que tienen los usuarios.
+
+const users = [
+  {
+    name: "Manolo el del bombo",
+    favoritesSounds: {
+      waves: { format: "mp3", volume: 50 },
+      rain: { format: "ogg", volume: 60 },
+      firecamp: { format: "mp3", volume: 80 },
+    },
+  },
+  {
+    name: "Mortadelo",
+    favoritesSounds: {
+      waves: { format: "mp3", volume: 30 },
+      shower: { format: "ogg", volume: 55 },
+      train: { format: "mp3", volume: 60 },
+    },
+  },
+  {
+    name: "Super Lopez",
+    favoritesSounds: {
+      shower: { format: "mp3", volume: 50 },
+      train: { format: "ogg", volume: 60 },
+      firecamp: { format: "mp3", volume: 80 },
+    },
+  },
+  {
+    name: "El culebra",
+    favoritesSounds: {
+      waves: { format: "mp3", volume: 67 },
+      wind: { format: "ogg", volume: 35 },
+      firecamp: { format: "mp3", volume: 60 },
+    },
+  },
+];
+
+let outPut = [];
+
+let vol = users;
+
+for (let user of users) {
+  let sounds = user.favoritesSounds;
+  for (let vol in sounds) {
+    outPut.push(sounds[vol].volume);
+  }
+}
+
+let suma = 0;
+outPut.forEach(function (numero) {
+  suma += numero;
+});
+console.log(suma / 12);
+// Devuelve 57.25
+
+
 // #4: Métodos findArrayIndex
 // Crea una función llamada findArrayIndex que reciba como parametros un array de textos y un texto y devuelve la posición del array cuando el valor del array sea igual al valor del texto que enviaste como parametro. Haz varios ejemplos y compruebalos.
 
